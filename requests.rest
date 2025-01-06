@@ -1,0 +1,3 @@
+### Register a new bike
+POST http://localhost:8080/bikes?bikeType=city&location=Utrecht
+###
