@@ -30,19 +30,6 @@ public class BikeStatusProjection {
 
     @QueryHandler(queryName = BikeStatusNamedQueries.FIND_ALL)
     public BikeStatusList findAll() {
-  //      return bikeStatusRepository.findAll();
-
-//        return new ArrayList<>(bikeStatusRepository.findAll());
-
-//        List<BikeStatus> result = bikeStatusRepository.findAll();
-//        System.out.println("Returned type from QueryHandler: " + result.getClass());
-//        if (!result.isEmpty()) {
-//            System.out.println("First element type: " + result.get(0).getClass());
-//            System.out.println();
-//            System.out.println(result);
-//        }
-//        return result;
-
         return new BikeStatusList(jdbcTemplate.query(
                 "SELECT * FROM bike_status",
                 (rs, rowNum) -> new BikeStatus(
