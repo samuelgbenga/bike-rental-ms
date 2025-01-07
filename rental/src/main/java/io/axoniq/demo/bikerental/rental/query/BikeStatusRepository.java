@@ -10,6 +10,10 @@ import java.util.List;
 
 @Repository
 public interface BikeStatusRepository extends JpaRepository<BikeStatus, String> {
+
+    @Override
+    List<BikeStatus> findAll();
+
     List<BikeStatus> findAllByBikeTypeAndStatus(String bikeType, RentalStatus rentalStatus);
     long countBikeStatusesByBikeType(String bikeType);
 }
