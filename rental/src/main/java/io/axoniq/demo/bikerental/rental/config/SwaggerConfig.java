@@ -14,14 +14,13 @@ public class SwaggerConfig {
     public GroupedOpenApi publicApi() {
         return GroupedOpenApi.builder()
                 .group("bikerental-public")
-                .pathsToMatch("/bikes/**")
+                .pathsToMatch("/**")
                 .build();
     }
 
     @Bean
     public OpenAPI customOpenAPI() {
         return new OpenAPI()
-                .addServersItem(new Server().url("http://localhost:8080").description("Spring Boot Application"))
                 .info(new Info()
                         .title("Spring Boot REST API")
                         .version("1.0")

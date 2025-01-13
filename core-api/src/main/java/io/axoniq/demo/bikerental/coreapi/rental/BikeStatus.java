@@ -1,6 +1,8 @@
 package io.axoniq.demo.bikerental.coreapi.rental;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.Id;
 
 @Entity
@@ -11,6 +13,8 @@ public class BikeStatus {
     private String bikeType;
     private String location;
     private String renter;
+
+    @Enumerated(EnumType.STRING)
     private RentalStatus status;
 
 
@@ -57,4 +61,25 @@ public class BikeStatus {
                 return "Status unknown";
         }
     }
+
+    //end::Accessors[]
+    //tag::Modifiers[]
+    public void returnedAt(String location) {
+        this.location = location;
+        this.status = RentalStatus.AVAILABLE;
+        this.renter = null;
+    }
+
+
+    public void requestedBy(String renter) {
+        this.renter = renter;
+        this.status = RentalStatus.REQUESTED;
+    }
+
+    public void rentedBy(String renter) {
+        this.renter = renter;
+        this.status = RentalStatus.RENTED;
+    }
+    //end:Modifiers[]
+    //end::Methods[]
 }
