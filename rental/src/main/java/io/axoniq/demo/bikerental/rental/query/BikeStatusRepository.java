@@ -10,7 +10,6 @@ import java.util.List;
 
 @Repository
 public interface BikeStatusRepository extends JpaRepository<BikeStatus, String> {
-
     @Override
     List<BikeStatus> findAll();
 

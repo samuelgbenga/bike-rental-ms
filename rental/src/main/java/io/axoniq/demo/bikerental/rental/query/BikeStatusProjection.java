@@ -12,9 +12,7 @@ import java.util.List;
 
 @Component
 public class BikeStatusProjection {
-
     private final BikeStatusRepository bikeStatusRepository;
-
     private final JdbcTemplate jdbcTemplate;
 
     public BikeStatusProjection(BikeStatusRepository repository, JdbcTemplate jdbcTemplate) {
