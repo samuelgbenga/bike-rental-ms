@@ -136,7 +136,6 @@ public class Bike {
         this.isAvailable = false;
         this.reservationConfirmed = true;
     }
-
     //end::BikeInUseEventSourcingHandler[]
 
 

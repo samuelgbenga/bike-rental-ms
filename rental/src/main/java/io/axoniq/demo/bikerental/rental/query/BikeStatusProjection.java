@@ -118,4 +118,11 @@ public class BikeStatusProjection {
 
     }
 
+    //end::findOneQueryHandler[]
+    @QueryHandler
+    public long countOfBikesByType(CountOfBikesByTypeQuery query) {
+        return bikeStatusRepository.countBikeStatusesByBikeType(query.bikeType());
+    }
+    //end::QueryHandlers[]
+
 }
